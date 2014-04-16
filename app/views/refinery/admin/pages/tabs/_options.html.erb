@@ -1,0 +1,25 @@
+<%
+def link_to_add_options(title, builder)
+  new_page_option = builder.object.send('page_options').klass.new
+  id = new_page_option.object_id
+  fields = builder.fields_for('page_options', new_page_option, :child_index => id) do |f|
+    render '/refinery/admin/pages/tabs/option_fields', :f => f
+  end
+  link_to title, '#', :class => 'add_options', :id => 'add_image_link', :data => {
+    :id => id,
+    :fields => fields.gsub("\n", "")
+  }
+end
+%>
+<div class='wym_skin_refinery page_part' id='page_option_picker'
+     data-input-type="<%#= Refinery::PageImages.config.wysiwyg ? 'wym' : 'textarea'%>">
+     <%= f.fields_for :page_options do |po| %>
+         <%= render '/refinery/admin/pages/tabs/option_fields', :f => po %>
+         <%= link_to_add_options t('refinery.admin.pages.tabs.options_bar.add'), f %>
+     <% end %>
+  <%#= render '/refinery/admin/pages/tabs/images_bar', :f => f %>
+  <%#= render '/refinery/admin/pages/tabs/images_field', :f => f %>
+</div>
+
+<%# content_for :stylesheets, stylesheet_link_tag('refinery/page-options-picker') %>
+<% content_for :javascripts, javascript_include_tag('refinery/page-options') %>

@@ -1,0 +1,18 @@
+en:
+  refinery:
+    plugins:
+      refinery_page_options:
+        tab_name: Page Options
+        title: Page Options
+        tab_name: Options
+        description: Page Options allows you to add key/value pairs for use in the frontend.
+    js:
+      admin:
+        page_options:
+          add_options: Add Options
+          done: Done
+    admin:
+      pages:
+        tabs:
+          options_bar:
+            add: Add Option
