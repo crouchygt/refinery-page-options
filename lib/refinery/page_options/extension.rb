@@ -4,8 +4,6 @@ module Refinery
       def has_many_page_options
         has_many :page_options
         accepts_nested_attributes_for :page_options, :allow_destroy => true
-        include Refinery::PageOptions::Extension::InstanceMethods
-
         attr_accessible :page_options_attributes
       end
     end
