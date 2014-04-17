@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name              = %q{refinerycms-page-options}
-  s.version           = %q{2.1.0}
+  s.version           = %q{2.1.2}
   s.description       = %q{Add key/value options to pages}
   s.summary           = %q{Page options extension for Refinery CMS}
   s.email             = %q{matt@crazypanda.co.uk}
